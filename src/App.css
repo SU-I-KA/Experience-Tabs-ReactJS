@@ -1,38 +1,257 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: #102a42;
+  background-color: #f1f5f8;
+}
+
+.container {
+  max-width: 90vw;
+  margin: 0 auto;
+  padding: 75px 10px
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.title {
+  flex: 0 0 100%;
+  max-width: 100%;
+  text-align: center;
+  letter-spacing: 2px;
+  padding-bottom: 10px
+}
+
+.title h1, h2 {
+  font-size: 40px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.title h1::before {
+  content: '';
+  position: absolute;
+  height: 4px;
+  right: 47%;
+  background-color: #2caeba;
+  top: 134px;
+  left: 47%;
+}
+
+.contents {
+  flex: 0 0 100%;
+  max-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 65px;
+  padding-bottom: 50px;
+}
+
+.tabs {
+  flex: 0 0 23%;
+  max-width: 23%;
+  padding-left: 10px;
+}
+
+.info {
+  /* flex: 0 0 calc(77% - 20px);
+  max-width: calc(77% - 20px); */
+  flex: 0 0 77%;
+  max-width: 77%;
+  display: flex;
+  flex-wrap: wrap;
+  /* margin-left: 20px; */
+}
+
+.job, .company, .dates, .description, .btn-more {
+  flex: 0 0 100%;
+  max-width: 100%;
+  margin-bottom: 10px ;
+}
+
+.job {
+font-size: 25px;
+letter-spacing: 2px;
+}
+
+.company p{
+background-color: #dae2ec;
+color: #617d98;
+padding: 4px 10px;
+font-size: 16px;
+font-weight: 700;
+width: fit-content;
+letter-spacing: 1.5px;
+border-radius: 5px;
+}
+
+.date {
+  font-size: 16px;
+  letter-spacing: 2px;
+  color: #617d98;
+}
+
+.btn-more {
+  padding-top: 25px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.duty {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  height: fit-content;
+  justify-items: center;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding-top: 25px;
 }
 
-.App-link {
-  color: #61dafb;
+.quote {
+  color: #2caeba;
+  flex: 0 0 5%;
+  max-width: 3%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.duty p {
+  flex: 0 0 95%;
+  max-width: 95%;
+  padding-left: 25px;
+  color: #324d67;
+  letter-spacing: 0.5px;
+}
+
+.company-btn {
+  display: block;
+  border: 2px solid transparent;
+  background: transparent;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 300;
+  margin-bottom: 20px;
+  padding: 6px 40px;
+  outline-color: #e0fcff;
+  transition: all .3s linear;
+  /* padding-left: 40px; */
+  
+  letter-spacing: 2px;
+  
+}
+
+.active, .company-btn:hover {
+  color: #2caeba;
+  box-shadow: -2px 0 #2caeba;
+}
+
+.btn-more .btn {
+  background-color: #2caeba;
+  color: #bff8fd;
+  box-shadow: 0 1px 3px rgb(0 0 0  /20%);
+  border-radius: 4px;
+  border: 2px solid transparent;
+  padding: 6px 45px;
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  outline-color: #2caeba;
+}
+
+.btn:hover {
+  background-color: #88ebf2;
+  color: #102a42;
+}
+
+.text-center {
+  text-align: center;
+}
+
+
+@media(max-width:992px){
+  .tabs {
+    flex: 0 0 100%;
+    max-width: fit-content;
+    padding: 10px;
+    text-align: center;
+    margin: 0 auto;
   }
-  to {
-    transform: rotate(360deg);
+  .company-btn {
+    display: inline-block;
+    padding: 6px 0px;
+    margin: 0 8px;
+  }
+  
+  .active, .company-btn:hover {
+    box-shadow: 0 2px #2caeba;
+  }
+  .contents {
+    margin-top: 30px;
+  }
+  .info {
+    flex: 0 0 96%;
+    max-width: -moz-fit-content;
+    max-width: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    /* margin-left: 20px; */
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+  .duty p {
+    font-size: 15px;
   }
 }
+
+
+@media(max-width:750px){
+  .title h1::before {
+    right: 45%;
+    left: 45%;
+    top: 130px;
+  }
+  .title h1, h2 {
+    font-size: 32px;
+  }
+  .job {
+    font-size: 20px;
+  }
+  .date, .duty p {
+    font-size: 14px;
+  }
+}
+
+@media(max-width:415px){
+  .company-btn {
+    font-size: 16px;
+    padding: 6px 3px;
+    margin-bottom: 0;
+  }
+  .info {
+    margin-top: 20px;
+  }
+  .job {
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .company p {
+    font-size: 13px;
+  }
+  .date, .duty p {
+    font-size: 13px;
+  }
+}
+
+
+
+
